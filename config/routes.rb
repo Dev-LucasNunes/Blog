@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  scope '/admin' do
+  scope "/admin" do
+    get "/", to: 'posts#index' #com isso eu faço que só de escrever admin ja va para index
     resources :posts
   end
 
