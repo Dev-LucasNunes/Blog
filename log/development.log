@@ -345,3 +345,54 @@ Migrating to PublishDate (20240417195405)
   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(892336952976185220)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin/posts" for 127.0.0.1 at 2024-04-17 17:15:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 4294)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 19522)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 2.6ms | Allocations: 21678)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-17 17:15:15 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (publish_date <= '2024-04-17 20:15:15.391238') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering blog/index.html.erb within layouts/application
+  Rendered blog/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 140)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1687)
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 3.7ms | Allocations: 4393)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-17 17:15:23 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (publish_date <= '2024-04-17 20:15:23.952604') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering blog/index.html.erb within layouts/application
+  Rendered blog/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1615)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1696)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.9ms | Allocations: 5174)
+
+
+  
+ActionView::Template::Error (undefined method `body' for nil:NilClass):
+    1: <%= @post.body %>
+    2: <!--o & indica que a variavel poost pode vir vazia, para ekle nao dar erro-->
+  
+app/views/blog/index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2024-04-17 17:15:28 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (publish_date <= '2024-04-17 20:15:28.804905') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering blog/index.html.erb within layouts/application
+  Rendered blog/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 15709)
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 2.6ms | Allocations: 19201)
+
+
