@@ -631,3 +631,133 @@ Processing by BlogController#index as HTML
 Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 2140)
 
 
+Started GET "/" for 127.0.0.1 at 2024-04-17 18:18:53 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (publish_date <= '2024-04-17 21:18:53.394163') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:6:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.3ms | Allocations: 154)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.7ms | Allocations: 356)
+Completed 200 OK in 12ms (Views: 1.7ms | ActiveRecord: 3.3ms | Allocations: 6639)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-17 18:19:05 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (publish_date <= '2024-04-17 21:19:05.830591') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:6:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.1ms | Allocations: 10)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.2ms | Allocations: 95)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 1200)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-17 18:20:59 -0300
+Processing by BlogController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3743)
+
+
+  
+NoMethodError (undefined method `order' for #<BlogController:0x0000000003a458>):
+  
+app/controllers/blog_controller.rb:6:in `index'
+Started GET "/" for 127.0.0.1 at 2024-04-17 18:21:15 -0300
+Processing by BlogController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3803)
+
+
+  
+NoMethodError (undefined method `order' for #<BlogController:0x0000000003e468>):
+  
+app/controllers/blog_controller.rb:6:in `index'
+Started GET "/" for 127.0.0.1 at 2024-04-17 18:21:22 -0300
+Processing by BlogController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3803)
+
+
+  
+NoMethodError (undefined method `order' for #<BlogController:0x000000000424a0>):
+  
+app/controllers/blog_controller.rb:6:in `index'
+Started GET "/" for 127.0.0.1 at 2024-04-17 18:21:45 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (publish_date <= '2024-04-17 21:21:45.861478') ORDER BY id desc LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:6:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.2ms | Allocations: 157)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.5ms | Allocations: 359)
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 3.7ms | Allocations: 6207)
+
+
+Started GET "/admin" for 127.0.0.1 at 2024-04-17 18:21:56 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.4ms | Allocations: 242)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1747)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 17046)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 17792)
+
+
+Started GET "/admin/posts/new" for 127.0.0.1 at 2024-04-17 18:21:57 -0300
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.6ms | Allocations: 1502)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1790)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2942)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3344)
+
+
+Started POST "/admin/posts" for 127.0.0.1 at 2024-04-17 18:23:00 -0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"carros", "body"=>"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Car World</title>\n    <!-- Bootstrap CSS -->\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\n    <!-- Custom CSS -->\n    <style>\n        body {\n            padding-top: 50px;\n            background-color: #f8f9fa;\n        }\n        .card {\n            background-color: #fff;\n            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n        }\n    </style>\n</head>\n<body>\n\n<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n    <a class=\"navbar-brand\" href=\"#\">Car World</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">Home</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">Cars</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">Services</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">About</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n\n<div class=\"container\">\n    <h1 class=\"mt-5\">Explore Our Collection of Cars</h1>\n    <p class=\"lead\">Discover the latest models and innovations in the world of automobiles.</p>\n\n    <div id=\"carCarousel\" class=\"carousel slide mb-5\" data-ride=\"carousel\">\n        <div class=\"carousel-inner\">\n            <div class=\"carousel-item active\">\n                <img src=\"https://via.placeholder.com/1200x600?text=Car%201\" class=\"d-block w-100\" alt=\"Car 1\">\n            </div>\n            <div class=\"carousel-item\">\n                <img src=\"https://via.placeholder.com/1200x600?text=Car%202\" class=\"d-block w-100\" alt=\"Car 2\">\n            </div>\n            <div class=\"carousel-item\">\n                <img src=\"https://via.placeholder.com/1200x600?text=Car%203\" class=\"d-block w-100\" alt=\"Car 3\">\n            </div>\n        </div>\n        <a class=\"carousel-control-prev\" href=\"#carCarousel\" role=\"button\" data-slide=\"prev\">\n            <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n            <span class=\"sr-only\">Previous</span>\n        </a>\n        <a class=\"carousel-control-next\" href=\"#carCarousel\" role=\"button\" data-slide=\"next\">\n            <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n            <span class=\"sr-only\">Next</span>\n        </a>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-md-4\">\n            <div class=\"card\">\n                <img src=\"https://via.placeholder.com/300\" class=\"card-img-top\" alt=\"Car Image\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Car Model</h5>\n                    <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat felis quis lorem maximus, non maximus eros cursus.</p>\n                    <a href=\"#\" class=\"btn btn-primary\">Learn More</a>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"card\">\n                <img src=\"https://via.placeholder.com/300\" class=\"card-img-top\" alt=\"Car Image\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Car Model</h5>\n                    <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat felis quis lorem maximus, non maximus eros cursus.</p>\n                    <a href=\"#\" class=\"btn btn-primary\">Learn More</a>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"card\">\n                <img src=\"https://via.placeholder.com/300\" class=\"card-img-top\" alt=\"Car Image\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Car Model</h5>\n                    <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat felis quis lorem maximus, non maximus eros cursus.</p>\n                    <a href=\"#\" class=\"btn btn-primary\">Learn More</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<!-- Bootstrap JS and dependencies -->\n<script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js\"></script>\n<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n\n</body>\n</html>\n", "publish_date"=>"2024-04-17T18:22"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (2.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "carros"], ["body", "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Car World</title>\n    <!-- Bootstrap CSS -->\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\n    <!-- Custom CSS -->\n    <style>\n        body {\n            padding-top: 50px;\n            background-color: #f8f9fa;\n        }\n        .card {\n            background-color: #fff;\n            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n        }\n    </style>\n</head>\n<body>\n\n<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n    <a class=\"navbar-brand\" href=\"#\">Car World</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">Home</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">Cars</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">Services</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">About</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n\n<div class=\"container\">\n    <h1 class=\"mt-5\">Explore Our Collection of Cars</h1>\n    <p class=\"lead\">Discover the latest models and innovations in the world of automobiles.</p>\n\n    <div id=\"carCarousel\" class=\"carousel slide mb-5\" data-ride=\"carousel\">\n        <div class=\"carousel-inner\">\n            <div class=\"carousel-item active\">\n                <img src=\"https://via.placeholder.com/1200x600?text=Car%201\" class=\"d-block w-100\" alt=\"Car 1\">\n            </div>\n            <div class=\"carousel-item\">\n                <img src=\"https://via.placeholder.com/1200x600?text=Car%202\" class=\"d-block w-100\" alt=\"Car 2\">\n            </div>\n            <div class=\"carousel-item\">\n                <img src=\"https://via.placeholder.com/1200x600?text=Car%203\" class=\"d-block w-100\" alt=\"Car 3\">\n            </div>\n        </div>\n        <a class=\"carousel-control-prev\" href=\"#carCarousel\" role=\"button\" data-slide=\"prev\">\n            <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n            <span class=\"sr-only\">Previous</span>\n        </a>\n        <a class=\"carousel-control-next\" href=\"#carCarousel\" role=\"button\" data-slide=\"next\">\n            <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n            <span class=\"sr-only\">Next</span>\n        </a>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-md-4\">\n            <div class=\"card\">\n                <img src=\"https://via.placeholder.com/300\" class=\"card-img-top\" alt=\"Car Image\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Car Model</h5>\n                    <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat felis quis lorem maximus, non maximus eros cursus.</p>\n                    <a href=\"#\" class=\"btn btn-primary\">Learn More</a>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"card\">\n                <img src=\"https://via.placeholder.com/300\" class=\"card-img-top\" alt=\"Car Image\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Car Model</h5>\n                    <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat felis quis lorem maximus, non maximus eros cursus.</p>\n                    <a href=\"#\" class=\"btn btn-primary\">Learn More</a>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"card\">\n                <img src=\"https://via.placeholder.com/300\" class=\"card-img-top\" alt=\"Car Image\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Car Model</h5>\n                    <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat felis quis lorem maximus, non maximus eros cursus.</p>\n                    <a href=\"#\" class=\"btn btn-primary\">Learn More</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<!-- Bootstrap JS and dependencies -->\n<script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js\"></script>\n<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n\n</body>\n</html>\n"], ["publish_date", "2024-04-17 18:22:00"], ["created_at", "2024-04-17 21:23:00.691728"], ["updated_at", "2024-04-17 21:23:00.691728"]]
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/admin/posts/2
+Completed 302 Found in 7ms (ActiveRecord: 3.0ms | Allocations: 2604)
+
+
+Started GET "/admin/posts/2" for 127.0.0.1 at 2024-04-17 18:23:00 -0300
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 768)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 1916)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 3543)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-17 18:23:07 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (publish_date <= '2024-04-17 21:23:07.205406') ORDER BY id desc LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:6:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.0ms | Allocations: 10)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.2ms | Allocations: 95)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1044)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-17 18:24:28 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (publish_date <= '2024-04-17 21:24:28.644227') ORDER BY publish_date desc LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:6:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.2ms | Allocations: 153)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.5ms | Allocations: 355)
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 3.3ms | Allocations: 6140)
+
+

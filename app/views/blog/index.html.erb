@@ -1,2 +1,3 @@
-<%= @post&.body %>
+<%= raw @post&.body %>
+<!--#esse raw faz com que o que chega nesse @ post ele renderize, então se chegar um html inteiro ele renderiza e faz a pagina-->
 <!--o & indica que a variavel poost pode vir vazia, para ekle nao dar erro-->
