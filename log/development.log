@@ -761,3 +761,15 @@ Processing by BlogController#index as HTML
 Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 3.3ms | Allocations: 6140)
 
 
+Started GET "/" for 127.0.0.1 at 2024-04-18 13:05:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (publish_date <= '2024-04-18 16:05:33.331580') ORDER BY publish_date desc LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:6:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.4ms | Allocations: 257)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.7ms | Allocations: 498)
+Completed 200 OK in 77ms (Views: 4.4ms | ActiveRecord: 18.5ms | Allocations: 109533)
+
+
